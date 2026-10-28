@@ -4,7 +4,7 @@
   <b>Advanced WhatsApp Bot Framework</b><br>
   Modular • Flexible • Developer-Friendly
 </p><p align="center">
-  <img src="https://img.shields.io/badge/Version-1.0.0-ff69b4?style=for-the-badge" alt="Version 1.0.0">
+  <img src="https://img.shields.io/badge/Version-1.0.0-7DF9FF?style=for-the-badge" alt="Version 1.0.0">
   <img src="https://img.shields.io/badge/Node.js-ESM-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
   <img src="https://img.shields.io/badge/Baileys-@sakuraa%2Fbaileys-8A2BE2?style=for-the-badge" alt="Sakuraa Baileys">
   <img src="https://img.shields.io/badge/License-Custom-red?style=for-the-badge" alt="Custom License">
