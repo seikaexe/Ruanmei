@@ -1,131 +1,376 @@
-🪸 Ruan Mei-Ai — WhatsApp Bot Base
+🪸 Ruan Mei-Ai
 
-«Ruan Mei-Ai adalah base WhatsApp Bot yang dibangun menggunakan Node.js ESM dan library "@sakuraa/baileys"
+<p align="center">
+  <b>Advanced WhatsApp Bot Framework</b><br>
+  Modular • Flexible • Developer-Friendly
+</p><p align="center">
+  <img src="https://img.shields.io/badge/Version-1.0.0-ff69b4?style=for-the-badge" alt="Version 1.0.0">
+  <img src="https://img.shields.io/badge/Node.js-ESM-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Baileys-@sakuraa%2Fbaileys-8A2BE2?style=for-the-badge" alt="Sakuraa Baileys">
+  <img src="https://img.shields.io/badge/License-Custom-red?style=for-the-badge" alt="Custom License">
+</p><p align="center">
+  <b>Ruan Mei-Ai</b> adalah base WhatsApp Bot berbasis Node.js dengan sistem plugin modular yang dirancang agar mudah dikembangkan, dikonfigurasi, dan diperluas sesuai kebutuhan pengembang
+</p>---
 
-Base ini dirancang dengan sistem plugin modular, sehingga fitur dapat ditambahkan, dikembangkan, dan dikelola dengan mudah tanpa harus mengubah seluruh sistem bot»
+📑 Daftar Isi
+
+- "🌸 Tentang Proyek" (#-tentang-proyek)
+- "📌 Informasi Proyek" (#-informasi-proyek)
+- "✨ Fitur Utama" (#-fitur-utama)
+- "📖 Sistem Menu" (#-sistem-menu)
+- "🧩 Sistem Plugin" (#-sistem-plugin)
+- "📂 Struktur Direktori" (#-struktur-direktori)
+- "🛠️ Teknologi" (#️-teknologi)
+- "🔄 Auto Restart" (#-auto-restart)
+- "📦 Pengembangan" (#-pengembangan)
+- "📜 Lisensi dan Ketentuan Penggunaan" (#-lisensi-dan-ketentuan-penggunaan)
+- "👨‍💻 Credits" (#-credits)
+
+---
+
+🌸 Tentang Proyek
+
+Ruan Mei-Ai merupakan framework WhatsApp Bot yang menggunakan JavaScript ES Modules dan package "@sakuraa/baileys"
+
+Dengan arsitektur berbasis plugin, setiap fitur dapat dikelola secara terpisah tanpa harus mengubah keseluruhan sistem utama
+
+✨ Keunggulan
+
+- 🧩 Modular Architecture — Fitur dipisahkan berdasarkan kategori plugin
+- ⚙️ Flexible Configuration — Konfigurasi bot dapat disesuaikan melalui "config.js"
+- 🚀 Extensible System — Memudahkan penambahan plugin baru
+- 📚 Dynamic Menu — Daftar command mengikuti plugin yang berhasil dimuat
+- 🛠️ Developer-Friendly — Struktur proyek dirancang untuk memudahkan pengembangan
+- 🔄 Automatic Recovery — Mendukung mekanisme penyambungan kembali ketika koneksi terputus
+- 🔐 Session Management — Mengelola autentikasi dan sesi WhatsApp
+
+---
+
+📌 Informasi Proyek
+
+Properti| Detail
+Nama| Ruan Mei-Ai
+Versi| 1.0.0
+Author| Seikagenou
+Runtime| Node.js
+Module System| JavaScript ES Modules
+WhatsApp Library| "@sakuraa/baileys"
+Database| SQLite ("node:sqlite")
+File Monitoring| Chokidar
+License| Custom Terms of Use
 
 ---
 
 ✨ Fitur Utama
 
-- 🔌 Plugin System — Memuat plugin secara otomatis dari folder "plugins/", termasuk subfolder
-- ♻️ Auto Restart — Memulai ulang proses bot secara otomatis ketika file konfigurasi, handler, library, atau plugin berubah
-- 📖 Interactive Menu — Menampilkan menu bot dengan gambar, teks, reaction, serta tombol pemilihan kategori
-- 🧩 Menu Builder — Menyusun menu secara otomatis berdasarkan kategori plugin
-- 🗃️ SQLite Database — Menyimpan data pengguna, EXP, level, limit, status premium, dan status banned
-- 🏅 Level & Rank System — Mendukung sistem EXP, level, rank, dan limit harian
-- 👑 Owner & Premium System — Mengatur hak akses khusus untuk owner dan pengguna premium
-- 👥 Group Protection — Mendukung pembatasan command berdasarkan grup, admin grup, dan status admin bot
-- 🔐 Pairing Code — Menghubungkan akun WhatsApp melalui kode pairing dari terminal
-- 📱 Session Management — Mengelola autentikasi dan sesi WhatsApp menggunakan Baileys
-- 🛠️ Command Handler — Mendukung prefix, alias command, permission, dan kategori plugin
-- 🔍 Debug System — Membantu memeriksa pemrosesan command dan kesalahan plugin
-- 🔄 Reconnect System — Mencoba menyambungkan kembali bot ketika koneksi terputus
+🧩 Plugin System
+
+Sistem plugin modular memungkinkan bot memuat fitur dari folder "plugins/", termasuk subfolder
+
+- Automatic Plugin Loader
+- Nested Plugin Directory Support
+- Command Registration
+- Command Alias
+- Category-Based Commands
+- Permission-Based Execution
+- Plugin Hot Reload
+- Modular Feature Management
+
+📖 Interactive Menu
+
+Sistem menu interaktif untuk membantu pengguna mengakses fitur bot dengan lebih mudah
+
+- 🌸 Interactive Main Menu
+- 🖼️ Image Thumbnail
+- 📝 Informative Text
+- ⚡ Reaction Support
+- 📂 Category Selection
+- 📋 Dynamic Command Listing
+- 👤 User Information
+- 🤖 Bot Information
+
+🗃️ Database System
+
+Penyimpanan data menggunakan SQLite untuk mendukung pengelolaan informasi pengguna dan sistem bot
+
+- User Data
+- Experience Points (EXP)
+- User Level
+- User Rank
+- Daily Limit
+- Premium Status
+- Banned Status
+- Persistent Data Storage
+
+🏅 Level & Rank System
+
+Sistem progres pengguna berdasarkan pengalaman yang diperoleh
+
+- EXP Management
+- Level Progression
+- Rank System
+- Daily Limit Management
+- User Progress Tracking
+
+👑 Owner & Premium System
+
+Sistem hak akses untuk membedakan pengguna berdasarkan izin yang diberikan
+
+- Owner Access
+- Premium Access
+- Command Restrictions
+- Permission Validation
+- Role-Based Features
+
+👥 Group Management & Protection
+
+Mendukung pembatasan command dan pemeriksaan izin untuk penggunaan di grup WhatsApp
+
+- Group-Only Commands
+- Admin-Only Commands
+- Bot Admin Validation
+- Group Permission Checks
+- Command Access Restrictions
+
+🔐 Pairing Code & Session Management
+
+Sistem autentikasi untuk menghubungkan akun WhatsApp dengan bot
+
+- Pairing Code Authentication
+- Session Management
+- Authentication State Handling
+- Connection Monitoring
+- Reconnection Support
+
+🔍 Debug System
+
+Membantu pengembang memeriksa pemrosesan command dan menangani kesalahan
+
+- Command Processing Logs
+- Plugin Error Reporting
+- Debug Information
+- Error Monitoring
+
+---
+
+📖 Sistem Menu
+
+Ruan Mei-Ai menyediakan sistem menu yang dirancang untuk menampilkan command berdasarkan kategori plugin yang berhasil dimuat
+
+".menu"
+
+Menampilkan menu utama bot dengan informasi dan navigasi kategori
+
+Fitur menu
+
+- 🌸 Tampilan menu interaktif
+- 🖼️ Dukungan thumbnail
+- ⚡ Reaction
+- 📂 Pemilihan kategori
+- 📋 Informasi command
+- 🤖 Informasi bot
+
+".allmenu"
+
+Menampilkan seluruh kategori dan command yang tersedia berdasarkan plugin yang berhasil dimuat
+
+Sistem menu dinamis membantu menjaga daftar command agar tetap selaras dengan plugin yang tersedia
+
+---
+
+🧩 Sistem Plugin
+
+Ruan Mei-Ai menggunakan arsitektur plugin modular untuk memisahkan setiap fitur berdasarkan kategori
+
+✨ Keuntungan Sistem Plugin
+
+- Menambahkan fitur tanpa mengubah banyak bagian sistem utama
+- Mengelompokkan command berdasarkan kategori
+- Mempermudah proses pemeliharaan dan debugging
+- Memungkinkan pengembangan fitur secara independen
+- Memudahkan pengelolaan command dan permission
+- Mendukung pemuatan ulang plugin sesuai implementasi yang tersedia
+
+📄 Metadata Plugin
+
+Plugin dapat menggunakan metadata untuk menentukan command, kategori, deskripsi, dan izin yang diperlukan
+
+Contoh metadata plugin
+
+handler.command = ['example', 'ex']
+handler.category = 'tools'
+handler.desc = 'Contoh command plugin'
+handler.usage = '<teks>'
+
+export default handler
+
+Sesuaikan metadata dengan format yang didukung oleh handler pada versi proyek yang digunakan
+
+---
+
+📂 Struktur Direktori
+
+Struktur berikut merupakan gambaran umum dari komponen utama proyek
+
+Ruan-Mei-Ai/
+├── config.js
+├── index.js
+├── handler.js
+├── package.json
+│
+├── database/
+│   └── ...
+│
+├── lib/
+│   ├── ...
+│   └── supervisor.js
+│
+└── plugins/
+    ├── ai/
+    ├── downloader/
+    ├── game/
+    ├── group/
+    ├── menu/
+    ├── owner/
+    ├── premium/
+    ├── tools/
+    └── ...
+
+«Catatan: Struktur di atas merupakan ilustrasi dan bukan daftar lengkap seluruh file proyek
+
+Sesuaikan nama folder dan file dengan struktur aktual repositori»
 
 ---
 
 🛠️ Teknologi
 
 Teknologi| Kegunaan
-Node.js| Runtime JavaScript
-JavaScript ESM| Sistem modul JavaScript
-"@sakuraa/baileys"| Menghubungkan bot dengan WhatsApp
-SQLite ("node:sqlite")| Penyimpanan dan pengelolaan data
+Node.js| Menjalankan aplikasi JavaScript
+JavaScript ESM| Mengelola sistem modul
+"@sakuraa/baileys"| Integrasi koneksi WhatsApp
+SQLite ("node:sqlite")| Penyimpanan data
 Chokidar| Memantau perubahan file
+JSON| Menyimpan konfigurasi atau data tertentu
 
 ---
 
-📂 Struktur Proyek
+🔄 Auto Restart
 
-Kode sumber dipisahkan menjadi beberapa bagian agar lebih mudah dipahami, dikelola, dan dikembangkan
+Ruan Mei-Ai mendukung pemantauan perubahan file untuk membantu proses pengembangan dan pemeliharaan bot
 
-Ruan-Mei-Ai/
-├── 📄 index.js       # Koneksi WhatsApp dan proses supervisor
-├── 📄 handler.js     # Pemrosesan pesan dan command
-├── ⚙️ config.js      # Konfigurasi bot
-├── 📁 lib/           # Modul dan fungsi pendukung
-└── 📁 plugins/       # Fitur dan command bot
+⚙️ Kemampuan
+
+- Memantau perubahan pada file yang dikonfigurasi
+- Menjalankan ulang proses sesuai aturan supervisor
+- Mendukung pemuatan ulang plugin jika implementasi mengizinkannya
+- Membantu menerapkan pembaruan kode tanpa harus memulai ulang proses secara manual setiap saat
+
+📌 Catatan
+
+Perilaku auto restart bergantung pada konfigurasi supervisor dan file yang dimasukkan ke dalam daftar pemantauan
+
+Pastikan pengaturan sesuai dengan implementasi yang tersedia pada repositori
 
 ---
 
-🎯 Tujuan Proyek
+📦 Pengembangan
 
-Ruan Mei-Ai dibuat sebagai fondasi pengembangan WhatsApp Bot yang mengutamakan
+Ruan Mei-Ai dirancang agar dapat dikembangkan melalui sistem plugin modular
 
-- ✅ Modularitas — Memudahkan pengembangan dan pemeliharaan kode
-- ✅ Struktur Terorganisasi — Memisahkan handler, konfigurasi, library, dan plugin
-- ✅ Kemudahan Pengembangan — Memungkinkan penambahan fitur melalui sistem plugin
-- ✅ Fleksibilitas — Dapat dikustomisasi sesuai kebutuhan pengembang
-- ✅ Efisiensi — Mempermudah pengelolaan fitur tanpa harus mengubah seluruh sistem bot
+🛠️ Area Pengembangan
+
+- Menambahkan command baru
+- Mengembangkan kategori plugin
+- Memperbaiki bug
+- Meningkatkan performa
+- Mengembangkan sistem menu
+- Menambahkan integrasi layanan eksternal
+- Memperbaiki dokumentasi
+
+📌 Ketentuan Pengembangan
+
+- Pertahankan watermark asli pembuat
+- Jangan menghapus kredit pembuat asli
+- Jangan mengklaim kode asli sebagai karya pribadi
+- Pastikan dependensi baru memiliki lisensi yang sesuai
+- Dokumentasikan perubahan yang dilakukan
 
 ---
 
 📜 Lisensi dan Ketentuan Penggunaan
 
-«⚠️ PENTING — BACA SEBELUM MENGGUNAKAN, MEMODIFIKASI, ATAU MENDISTRIBUSIKAN PROYEK INI»
+«⚠️ PENTING — BACA SELURUH KETENTUAN SEBELUM MENGGUNAKAN ATAU MENDISTRIBUSIKAN PROYEK INI»
 
-Penggunaan Ruan Mei-Ai — WhatsApp Bot Base harus menghormati hak cipta pembuat asli, ketentuan lisensi yang berlaku, dan hak pemilik komponen pihak ketiga
+Ruan Mei-Ai dikembangkan oleh Seikagenou dengan ketentuan penggunaan yang bertujuan melindungi atribusi pembuat asli dan mencegah penyalahgunaan identitas proyek
+
+Ketentuan ini harus dibaca bersama file lisensi resmi yang disertakan dalam repositori, jika tersedia
 
 🛡️ 1 — Hak Cipta dan Kepemilikan
 
-- Hak cipta kode asli tetap berada pada pemegang hak yang sah
-- Pengguna dilarang mengklaim kode asli sebagai karya pribadi
-- Modifikasi atau penambahan fitur tidak secara otomatis mengalihkan kepemilikan kode asli
-- Kontributor diperbolehkan mencantumkan kredit atas kontribusinya sendiri tanpa menghilangkan kredit pembuat asli
-- Komponen pihak ketiga tetap tunduk pada lisensi masing-masing
+- Hak atas kode asli tetap berada pada pemegang hak yang sah
+- Pengguna dilarang mengklaim kode asli sebagai hasil karya pribadi
+- Modifikasi tidak secara otomatis mengalihkan kepemilikan kode asli
+- Kontributor dapat memberikan kredit atas fitur atau perubahan yang benar-benar dibuatnya
+- Hak atas komponen pihak ketiga tetap mengikuti lisensi masing-masing
 
 ©️ 2 — Watermark dan Kredit Pembuat
 
-- Watermark asli pembuat wajib dipertahankan pada kode sumber yang memuatnya
-- Dilarang menghapus, mengubah, menyamarkan, atau mengganti watermark dengan identitas pihak lain
-- Kredit pembuat asli wajib dicantumkan ketika mendistribusikan ulang proyek jika dipersyaratkan oleh ketentuan yang berlaku
-- Pengembang boleh menambahkan kredit untuk fitur yang dibuatnya sendiri
-- Kredit tambahan tidak boleh digunakan untuk mengaburkan identitas pembuat asli
+Watermark dan kredit pembuat asli wajib dipertahankan sesuai ketentuan yang berlaku
 
-🚫 3 — Larangan Penjualan dan Penjualan Ulang
+- Dilarang menghapus watermark asli dari kode sumber
+- Dilarang mengubah watermark untuk menggantinya dengan identitas pihak lain
+- Dilarang menyamarkan atau menghilangkan identitas pembuat asli
+- Dilarang mengklaim bahwa proyek asli sepenuhnya dibuat oleh pihak lain
+- Kredit tambahan untuk kontributor diperbolehkan selama tidak menghilangkan kredit asli
 
-DILARANG MENJUAL KEMBALI BASE INI SEBAGAI PRODUK MILIK SENDIRI TANPA IZIN TERTULIS DARI PEMEGANG HAK YANG BERWENANG
+🚫 3 — Larangan Menjual Base
 
-- ❌ Dilarang menjual kembali base dalam bentuk asli sebagai karya pribadi
-- ❌ Dilarang menjual versi modifikasi dengan menghilangkan watermark atau kredit pembuat asli
-- ❌ Dilarang mengemas ulang proyek untuk dijual dengan mengklaim kepemilikan kode asli
-- ❌ Dilarang mengklaim kepemilikan eksklusif atas kode asli yang bukan hasil karya sendiri
-- ❌ Penggunaan komersial atau distribusi berbayar memerlukan izin apabila tidak diizinkan oleh lisensi yang berlaku
-- ⚠️ Izin atas kode asli tidak otomatis memberikan hak untuk menjual komponen pihak ketiga
+DILARANG MENJUAL KEMBALI RUAN MEI-AI SEBAGAI PRODUK MILIK SENDIRI TANPA IZIN TERTULIS DARI PEMEGANG HAK YANG BERWENANG
+
+Ketentuan larangan penjualan meliputi
+
+- ❌ Menjual ulang base dalam bentuk asli
+- ❌ Menjual ulang base dengan nama atau identitas berbeda untuk menyamarkan asal-usulnya
+- ❌ Menjual versi modifikasi dengan menghilangkan watermark atau kredit pembuat asli
+- ❌ Mengemas ulang kode sumber untuk dijual sebagai produk milik sendiri
+- ❌ Mengklaim kepemilikan eksklusif atas kode asli yang bukan hasil karya sendiri
+- ❌ Menggunakan kontribusi pihak lain untuk membuat klaim kepemilikan yang menyesatkan
+
+Penggunaan komersial dan distribusi berbayar hanya diperbolehkan jika memiliki izin yang diperlukan dan sesuai dengan lisensi yang berlaku
 
 🔧 4 — Modifikasi dan Pengembangan
 
-- Pengguna dapat mempelajari struktur kode sesuai ketentuan lisensi yang berlaku
-- Pengguna dapat memperbaiki bug, menambahkan fitur, dan menyesuaikan konfigurasi sesuai izin yang diberikan
-- Modifikasi tidak boleh digunakan untuk menyamarkan asal-usul kode asli
-- Perubahan yang dilakukan sebaiknya didokumentasikan dengan jelas
-- Pengembang boleh mencantumkan namanya sebagai kontributor tambahan tanpa menghapus kredit pembuat asli
-- Seluruh modifikasi wajib mematuhi lisensi yang berlaku
+- Pengguna dapat melakukan modifikasi sejauh diizinkan oleh ketentuan lisensi yang berlaku
+- Pengguna dapat memperbaiki bug dan menambahkan fitur baru sesuai izin yang diberikan
+- Modifikasi tidak boleh digunakan untuk menghapus atau menyamarkan atribusi pembuat asli
+- Pengembang dapat mencantumkan identitasnya sebagai kontributor tambahan
+- Perubahan sebaiknya didokumentasikan agar asal-usul kode tetap jelas
+- Seluruh perubahan harus menghormati hak pemegang hak cipta dan lisensi komponen pihak ketiga
 
 📤 5 — Distribusi dan Pembagian Ulang
 
 - Distribusi ulang hanya diperbolehkan sejauh diizinkan oleh pemegang hak dan lisensi yang berlaku
-- Watermark dan pemberitahuan hak cipta yang relevan wajib dipertahankan
-- Dilarang mendistribusikan ulang proyek dengan informasi kepemilikan yang menyesatkan
-- Dilarang menghapus ketentuan lisensi yang berlaku untuk mengklaim proyek sebagai karya sendiri
-- Distribusi komponen pihak ketiga wajib mengikuti lisensi masing-masing
-- Jika izin distribusi belum jelas, hubungi pembuat asli sebelum membagikan kode sumber
+- Watermark dan pemberitahuan hak cipta yang relevan harus dipertahankan
+- Dilarang mendistribusikan ulang proyek dengan klaim kepemilikan yang menyesatkan
+- Dilarang menghapus ketentuan lisensi untuk mengesankan bahwa proyek merupakan karya pribadi
+- Distribusi komponen pihak ketiga harus mematuhi lisensi masing-masing
+- Jika izin distribusi tidak jelas, hubungi pemegang hak sebelum membagikan kode sumber
 
 👑 6 — Permintaan Izin Khusus
 
-Permintaan izin khusus dapat diajukan untuk penggunaan yang tidak secara jelas diizinkan oleh ketentuan ini
+Untuk penggunaan yang tidak secara jelas diizinkan oleh ketentuan ini, pengguna harus memperoleh persetujuan dari pemegang hak yang berwenang
 
-Contoh penggunaan yang memerlukan klarifikasi atau izin khusus
+Contoh permintaan izin khusus
 
-- 💼 Penggunaan dalam proyek komersial
-- 💰 Distribusi atau penjualan dalam bentuk paket berbayar
+- 💼 Penggunaan komersial
+- 💰 Penjualan atau distribusi berbayar
 - 📦 Redistribusi dengan ketentuan berbeda
 - 🤝 Kerja sama pengembangan dengan persyaratan khusus
 
-Hubungi pembuat asli
+Kontak pembuat asli
 
-- 👤 Nama: Seikagenou
-- 📱 Telegram: "t.me/seikagenou" (https://t.me/seikagenou)
+- Nama: Seikagenou
+- Telegram: "t.me/seikagenou" (https://t.me/seikagenou)
 
 «Mengajukan permintaan tidak berarti izin telah diberikan
 
@@ -133,14 +378,14 @@ Pastikan memperoleh persetujuan tertulis sebelum melakukan aktivitas yang memerl
 
 ⚖️ 7 — Tanggung Jawab Pengguna
 
-- Pengguna bertanggung jawab atas konfigurasi, modifikasi, dan penggunaan bot yang diterapkannya
+- Pengguna bertanggung jawab atas konfigurasi, modifikasi, dan cara penggunaan bot
 - Pengguna wajib mematuhi ketentuan layanan WhatsApp serta hukum yang berlaku
 - Pengguna bertanggung jawab atas penyalahgunaan yang dilakukannya sesuai hukum yang berlaku
-- Pengguna wajib menjaga keamanan kredensial dan sesi autentikasi WhatsApp
+- Pengguna wajib menjaga keamanan kredensial dan sesi autentikasi
 - Pembuat asli tidak otomatis bertanggung jawab atas perubahan yang dilakukan oleh pihak lain
-- Ketentuan ini tidak menghapus tanggung jawab yang tidak dapat dikecualikan berdasarkan hukum
+- Ketentuan ini tidak menghapus tanggung jawab yang tidak dapat dikecualikan oleh hukum
 
-⛔ 8 — Pelanggaran Ketentuan
+⛔ 8 — Penanganan Pelanggaran
 
 Pelanggaran terhadap hak cipta atau ketentuan lisensi dapat ditindaklanjuti oleh pemegang hak sesuai hukum yang berlaku
 
@@ -150,46 +395,40 @@ Tindakan yang dapat dipertimbangkan meliputi
 - 🛡️ Permintaan pemulihan watermark atau kredit yang dihapus
 - ⚖️ Tindakan hukum apabila memiliki dasar yang sah
 
----
-
 📋 Ringkasan Ketentuan
 
 Aktivitas| Ketentuan
-Menggunakan base| Wajib mematuhi lisensi yang berlaku
-Mempelajari kode| Diizinkan sejauh sesuai lisensi
-Memodifikasi kode| Diizinkan sejauh sesuai lisensi
-Mempertahankan watermark| Wajib sesuai ketentuan penggunaan
-Menghapus kredit pembuat asli| Dilarang jika melanggar ketentuan yang berlaku
+Menggunakan base| Wajib mengikuti lisensi yang berlaku
+Mempelajari kode| Sesuai izin dan lisensi yang berlaku
+Memodifikasi kode| Sesuai izin dan lisensi yang berlaku
+Menghapus watermark asli| Dilarang sesuai ketentuan penggunaan
+Menghapus kredit pembuat| Dilarang jika melanggar ketentuan yang berlaku
 Mengklaim kode asli sebagai karya sendiri| DILARANG
 Menjual ulang sebagai produk sendiri| DILARANG TANPA IZIN YANG DIPERLUKAN
 Penggunaan komersial| Memerlukan izin jika tidak diizinkan oleh lisensi
 Distribusi ulang| Harus sesuai lisensi dan izin yang berlaku
-Menambahkan kredit kontributor| Diizinkan tanpa menghapus kredit asli
+Menambahkan kredit kontributor| Diperbolehkan tanpa menghilangkan kredit asli
 
----
+«⚠️ Catatan Lisensi
 
-🤝 Prinsip Penggunaan
+Ketentuan ini merupakan pernyataan kebijakan penggunaan proyek dan bukan pengganti dokumen lisensi resmi
 
-«Gunakan dengan bijak, kembangkan dengan kreatif, dan selalu hargai karya pembuat aslinya»
+Jika proyek menggunakan lisensi pihak ketiga atau lisensi open-source yang sudah memberikan hak tertentu kepada pengguna, ketentuan tambahan tidak dapat begitu saja menghapus hak yang telah diberikan oleh lisensi tersebut
 
-Ruan Mei-Ai dibuat sebagai fondasi bagi pengembang yang ingin membangun WhatsApp Bot dengan struktur modular dan fleksibel
-
-Hormati karya asli, pertahankan kredit pembuat, dan patuhi ketentuan penggunaan yang berlaku
+Pastikan file "LICENSE" konsisten dengan aturan yang ditetapkan pemegang hak sebelum repositori dipublikasikan»
 
 ---
 
 👨‍💻 Credits
 
-Original Creator: Seikagenou
-
-- 📱 Telegram: "t.me/seikagenou" (https://t.me/seikagenou)
-
----
+<p align="center">
+  <b>Original Creator</b><br>
+  <strong>Seikagenou</strong><br><br>
+  📱 <b>Telegram:</b> <a href="https://t.me/seikagenou">t.me/seikagenou</a>
+</p>---
 
 <p align="center">
-  <b>🪸 Ruan Mei-Ai — Modular, Flexible, and Easy to Recode</b>
-  <br>
-  <i>Built for developers · Designed for flexibility</i>
-  <br><br>
-  <b>© Seikagenou — Original Creator</b>
+  🪸 <b>Ruan Mei-Ai</b><br>
+  <i>Modular • Flexible • Developer-Friendly</i><br><br>
+  <b>Respect the Creator · Preserve the Credits</b>
 </p>
